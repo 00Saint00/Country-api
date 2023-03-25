@@ -1,0 +1,58 @@
+.details {
+  padding: 0 80px;
+  background-color: hsl(0, 0%, 98%);
+  height: 88vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.darkDetails {
+  padding: 0 80px;
+  background-color: hsl(207, 26%, 17%);
+  height: 88vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.single {
+  display: flex;
+  width: 100%;
+  gap: 7rem;
+}
+
+.media {
+  width: 600px;
+}
+
+.darkInfo {
+  padding: 23px 0;
+  color: hsl(0, 0%, 98%);
+}
+
+.infos {
+  padding: 23px 0;
+}
+
+.facts {
+  display: flex;
+  text-align: left;
+}
+
+.typography {
+  display: flex;
+  text-align: left;
+  gap: 100px;
+}
+
+.darkTypography {
+  display: flex;
+  text-align: left;
+  gap: 100px;
+  color: hsl(0, 0%, 100%);
+}
+
+.bottom {
+  display: flex;
+}

@@ -1,0 +1,80 @@
+.myCards {
+  width: 240px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 50px;
+  cursor: pointer;
+  transition: transform ease-in-out 1.5s;
+}
+
+.darkCards {
+  width: 240px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px hsl(209, 23%, 22%);
+  margin: 50px;
+  cursor: pointer;
+  transition: transform ease-in-out 3.5s;
+}
+
+.myCards:hover {
+  transform: scale(1.04);
+}
+
+.darkCards:hover {
+  transform: scale(1.05);
+}
+
+.countryCards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.body-container {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-container {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(209, 23%, 17%);
+}
+
+.cardCon {
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 1px 1px 5px rgb(233, 231, 231);
+}
+
+.cardConDarkMode {
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 1px 1px 5px hsl(209, 23%, 22%);
+}
+
+.type {
+  text-align: left;
+  margin: 10px;
+}
+
+.typeDark {
+  margin: 10px;
+  text-align: left;
+  color: hsl(0, 0%, 100%);
+}
+
+.type strong {
+  color: rgb(65, 65, 65);
+}
+
+.typeDark strong {
+  color: hsl(0, 0%, 100%);
+}
+
+.typeDark p {
+  color: rgb(192, 191, 191);
+}
