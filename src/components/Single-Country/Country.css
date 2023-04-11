@@ -1,8 +1,8 @@
 .details {
   padding: 0 80px;
   background-color: hsl(0, 0%, 98%);
-  height: 88vh;
-  overflow: hidden;
+  height: 98vh;
+  overflow-y: auto;
   display: flex;
   align-items: center;
 }
@@ -10,8 +10,8 @@
 .darkDetails {
   padding: 0 80px;
   background-color: hsl(207, 26%, 17%);
-  height: 88vh;
-  overflow: hidden;
+  height: 98vh;
+  overflow-y: auto;
   display: flex;
   align-items: center;
 }
@@ -29,6 +29,7 @@
 .darkInfo {
   padding: 23px 0;
   color: hsl(0, 0%, 98%);
+  overflow-y: auto;
 }
 
 .infos {
