@@ -3,12 +3,13 @@ import Header from "./Header/Header";
 import Search from "./Search/Search";
 import Filter from "./Filter/Filter";
 import Body from "./Body/Body";
-import { CircularProgress } from "@mui/joy";
+import { CircularProgress } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountries } from "../redux/countries/Action";
 
 const Components = () => {
   const [query, setQuery] = useState("");
+  const [filter, setFilter] = useState("");
   let dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,13 +20,21 @@ const Components = () => {
     (state) => state.countryReducer
   );
 
+  console.log(loading);
+
   const filteredCountries = countries
-    ? countries.filter(({ name }) =>
-        name.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+    ? countries.filter(
+        ({ name, region }) =>
+          name.toLocaleLowerCase().includes(query.toLocaleLowerCase()) ||
+          region.toLocaleLowerCase().includes(filter.toLocaleLowerCase())
       )
     : [];
 
+  console.log(filteredCountries);
+
+  console.log(filter);
   const onChangeHandler = ({ target: { value } }) => setQuery(value);
+  const onFilter = ({ target: { value } }) => setFilter(value);
 
   const { darkMode } = useSelector((state) => state.darkModeReducer);
 
@@ -38,12 +47,15 @@ const Components = () => {
           onChangeHandler={onChangeHandler}
           placeholder="Search by country name"
         />
-        <Filter value={query} handleChange={onChangeHandler} />
+        <Filter value={filter} handleChange={onFilter} />
       </div>
       <div className={darkMode ? "dark-container" : "body-container"}>
-        {loading ? (
-          <CircularProgress />
-        ) : (
+        {loading && (
+          <div className="loader">
+            <CircularProgress />
+          </div>
+        )}
+        {!loading &&
           filteredCountries?.map((items, i) => (
             <Body
               key={i}
@@ -53,8 +65,7 @@ const Components = () => {
               region={items.region}
               capital={items.capital}
             />
-          ))
-        )}
+          ))}
       </div>
     </div>
   );

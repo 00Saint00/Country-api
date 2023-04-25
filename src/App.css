@@ -28,3 +28,16 @@
 a {
   text-decoration: none;
 }
+
+.loader {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 400px) {
+  .loader {
+    height: 80vh;
+  }
+}

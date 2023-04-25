@@ -7,13 +7,7 @@ import { MenuItem } from "@mui/material";
 import { useSelector } from "react-redux";
 import "./Filter.css";
 
-function Filter() {
-  const [region, setRegion] = React.useState("");
-
-  const handleChange = (event) => {
-    setRegion(event.target.value);
-  };
-
+function Filter({ value, handleChange }) {
   const { darkMode } = useSelector((state) => state.darkModeReducer);
   return (
     <div className={darkMode ? "inputElemDarkMode" : "inputElem"}>
@@ -38,7 +32,7 @@ function Filter() {
               ? "demo-simple-select-helper-label-darkMode"
               : "demo-simple-select-helper-label"
           }
-          value={region}
+          value={value}
           label="region"
           onChange={handleChange}
           variant="standard"

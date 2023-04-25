@@ -68,7 +68,7 @@ const CountryPage = () => {
                   <p>
                     <strong>Border Countries:</strong>
                   </p>
-                  {item.borders.map((z) => (
+                  {item.borders?.map((z) => (
                     <div className={darkMode ? "borderDarkMode" : "border"}>
                       <button
                         className={
